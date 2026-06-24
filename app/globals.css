@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #edfcf2;
+  --color-brand-100: #d3f8df;
+  --color-brand-200: #aaf0c4;
+  --color-brand-300: #73e2a3;
+  --color-brand-400: #3ccb7f;
+  --color-brand-500: #16b364;
+  --color-brand-600: #099250;
+  --color-brand-700: #087443;
+  --color-brand-800: #095c37;
+  --color-brand-900: #084c2e;
+
+  --color-ink: #102a1c;
+  --color-ink-muted: #66756b;
+  --color-canvas: #f6f8f5;
+
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-canvas);
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease both;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-shadow {
+  box-shadow: 0 1px 2px rgba(16, 42, 28, 0.06), 0 8px 24px -12px rgba(16, 42, 28, 0.25);
+}
